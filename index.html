@@ -4,9 +4,105 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Particle Shooter Game</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: 'Courier New', Courier, monospace;
+    }
+    canvas {
+      /* background-color: blue; */
+      display: block;
+    }
+    p#actualScore,
+    p#actualKills {
+      margin: 0;
+      padding: 0;
+      position: fixed;
+      color: white;
+      padding: 1rem;
+      font-size: 1.25em;
+      user-select: none;
+    }
+    p#actualKills {
+      top: 30px
+    }
+    div#welcomeScreen {
+      background-color: white;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 60vw;
+      height: 60vh;
+      display: flex; 
+      /* Change to flex */
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: .5rem;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: .5em;
+      line-height: 1;
+      text-align: center;
+    }
+    div#finalScoreScreen {
+      background-color: white;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 60vw;
+      height: 60vh;
+      display: none; 
+      /* Change to flex */
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: .5rem;
+    }
+    h2#finalScore {
+      font-size: 5em;
+      margin: 0;
+      line-height: 0.5;
+    }
+    #finalScoreScreen > p {
+      font-size: 1.75em;
+    }
+    button#playAgainBtn,
+    button#startGameBtn {
+      background-color: red;
+      border: none;
+      border-radius: .5rem;
+      font-family: inherit;
+      font-size: 3em;
+      font-weight: bold;
+      padding: .5rem 1rem;
+    }
+  </style>
 </head>
-<body>
+<body id="body">
+  <p id="actualScore"></p>
+  <p id="actualKills"></p>
+
+  <div id="welcomeScreen">
+    <h1>Particle Shooter</h1>
+    <button id="startGameBtn">Start Game</button>
+  </div>
+
+  <div id="finalScoreScreen">
+    <h2 id="finalScore">120</h2>
+    <p>Points</p>
+    <button id="playAgainBtn">Play Again</button>
+  </div>
+
   <canvas id="canvas"></canvas>
-  <script src="script.js"></script>  
+  <script type="module" src="script.js"></script>  
 </body>
 </html>
